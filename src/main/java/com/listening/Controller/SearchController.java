@@ -24,7 +24,7 @@ public class SearchController {
      * @param key
      * @return 模糊搜索（按歌名）key
      */
-    @CrossOrigin(origins = "http://localhost:8090")
+    @CrossOrigin(origins = "*")
     @GetMapping("/search")
     public List<music> search(String key){
         System.out.println("search was called");
@@ -36,7 +36,7 @@ public class SearchController {
      * @param musicid
      * @return
      */
-    @CrossOrigin(origins = "http://localhost:8090")
+    @CrossOrigin(origins = "*")
     @PostMapping("/search")
     public Code searchaddlike(int userid, int musicid){
         System.out.println("searchaddlike "+musicid+' '+userid+" was called");

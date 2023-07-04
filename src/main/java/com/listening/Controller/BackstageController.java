@@ -12,6 +12,7 @@ import java.util.List;
  * @author Misaka
  */
 
+@CrossOrigin(origins = "*")
 @RestController
 @RequestMapping("/backstage")
 public class BackstageController {

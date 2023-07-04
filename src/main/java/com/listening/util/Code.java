@@ -38,5 +38,12 @@ public class Code {
         this.description = description;
     }
 
-
+    @Override
+    public String toString() {
+        return "Code{" +
+                "type=" + type +
+                ", description='" + description + '\'' +
+                ", data='" + data + '\'' +
+                '}';
+    }
 }

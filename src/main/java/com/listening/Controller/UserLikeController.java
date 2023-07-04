@@ -18,13 +18,13 @@ import java.util.List;
 public class UserLikeController {
     @Autowired
     LikeServer ls;
-    @CrossOrigin(origins = "http://localhost:8090")
+    @CrossOrigin(origins = "*")
     @GetMapping("/{userid}")
     public List<like> selectbyuid(@PathVariable int userid){
         System.out.println("selectbyuid was called");
         return ls.findbyuserid(userid);
     }
-    @CrossOrigin(origins = "http://localhost:8090")
+    @CrossOrigin(origins = "*")
     @PostMapping("/{userid}")
     public Code deletelike(@PathVariable int userid, int musicid){
         System.out.println("deletelike was called");

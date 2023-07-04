@@ -22,7 +22,7 @@ public class LoginController {
      * @param pwd
      * @return user对象
      */
-    @CrossOrigin(origins = "http://localhost:8090")
+    @CrossOrigin(origins = "*")
     @GetMapping("/login")
     public Code login( String name, String pwd){
         System.out.println(name+" "+pwd);
@@ -31,6 +31,7 @@ public class LoginController {
             int x=us.updateoffline(name,0,pwd);
             if(x!=1) System.out.println("update offline failled");
             else System.out.println("update offline success");
+            System.out.println(us.login(name,pwd).toString());
         }catch (Exception e){
             e.printStackTrace();
         }
@@ -41,7 +42,7 @@ public class LoginController {
      * @param name
      * @return 受影响行数（为1则下线成功）
      */
-    @CrossOrigin(origins = "http://localhost:8090")
+    @CrossOrigin(origins = "*")
     @PostMapping("/logout")
     public Code logout(String name){
         System.out.println(name+" logout was called");

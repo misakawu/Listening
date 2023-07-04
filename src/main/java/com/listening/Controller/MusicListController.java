@@ -22,7 +22,7 @@ public class MusicListController {
     @Autowired
     LikeServer ls;
 
-    @CrossOrigin(origins = "http://localhost:8090")
+    @CrossOrigin(origins = "*")
     @PostMapping("/list")
     public Code listaddlike(int userid,int musicid){
         System.out.println("listaddlike "+musicid+' '+userid+" was called");
@@ -32,7 +32,7 @@ public class MusicListController {
         return ls.insertlike(a);
     }
 
-    @CrossOrigin(origins = "http://localhost:8090")
+    @CrossOrigin(origins = "*")
     @GetMapping("/list")
     public List<music> allmusic(){
         System.out.println("allmusc was called");
