@@ -26,8 +26,8 @@ public interface UserMapper {
     @Select("select * from user where UserName = #{name} and UserPassword = #{pwd}")
     List<user> login(@Param("name") String name,@Param("pwd") String pwd);
 
-    @Update("update user set UserOffline=#{to} where UserName = #{name}")
-    int updateoffline(@Param("name") String name,@Param("to") int to);
+    @Update("update user set UserOffline=#{to} where UserName = #{name} and UserPassword = #{pwd}")
+    int updateoffline(@Param("name") String name,@Param("to") int to,@Param("pwd") String pwd);
 
     @Update("update user set UserOffline=1 where UserName = #{name}")
     int logout(@Param("name") String name);

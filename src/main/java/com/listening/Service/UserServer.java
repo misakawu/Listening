@@ -52,8 +52,8 @@ public class UserServer {
     }
 
 
-    public int updateoffline(String name,int to){
-        return um.updateoffline(name,to);
+    public int updateoffline(String name,int to,String pwd){
+        return um.updateoffline(name,to,pwd);
     }
     public Code login(String name,String pwd){
         Code x=new Code();

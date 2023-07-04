@@ -6,10 +6,7 @@ import com.listening.Service.LikeServer;
 import com.listening.Service.MusicServer;
 import com.listening.util.Code;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
@@ -27,6 +24,7 @@ public class SearchController {
      * @param key
      * @return 模糊搜索（按歌名）key
      */
+    @CrossOrigin(origins = "http://localhost:8090")
     @GetMapping("/search")
     public List<music> search(String key){
         System.out.println("search was called");
@@ -38,6 +36,7 @@ public class SearchController {
      * @param musicid
      * @return
      */
+    @CrossOrigin(origins = "http://localhost:8090")
     @PostMapping("/search")
     public Code searchaddlike(int userid, int musicid){
         System.out.println("searchaddlike "+musicid+' '+userid+" was called");
