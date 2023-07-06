@@ -26,10 +26,7 @@ public class MusicListController {
     @PostMapping("/list")
     public Code listaddlike(int userid,int musicid){
         System.out.println("listaddlike "+musicid+' '+userid+" was called");
-        like a=new like();
-        a.setMusicID(musicid);
-        a.setUserID(userid);
-        return ls.insertlike(a);
+        return ls.insertlike(userid,musicid);
     }
 
     @CrossOrigin(origins = "*")

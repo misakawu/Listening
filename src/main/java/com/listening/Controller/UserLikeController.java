@@ -1,6 +1,7 @@
 package com.listening.Controller;
 
 import com.listening.Bean.like;
+import com.listening.Bean.music;
 import com.listening.Service.LikeServer;
 import com.listening.util.Code;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -20,16 +21,21 @@ public class UserLikeController {
     LikeServer ls;
     @CrossOrigin(origins = "*")
     @GetMapping("/{userid}")
-    public List<like> selectbyuid(@PathVariable int userid){
+    public List<music> selectbyuid(@PathVariable int userid){
         System.out.println("selectbyuid was called");
         return ls.findbyuserid(userid);
     }
     @CrossOrigin(origins = "*")
-    @PostMapping("/{userid}")
-    public Code deletelike(@PathVariable int userid, int musicid){
+    @PostMapping("/")
+    public Code deletelike(int userid, int musicid){
         System.out.println("deletelike was called");
         return ls.deletelike(userid,musicid);
     }
-
+    @CrossOrigin(origins = "*")
+    @GetMapping("/")
+    public Code insertlike(int userid, int musicid){
+        System.out.println("insertlike was called");
+        return ls.insertlike(userid,musicid);
+    }
 
 }
